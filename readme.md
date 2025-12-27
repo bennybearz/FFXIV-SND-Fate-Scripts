@@ -1,3 +1,5 @@
+# Public archive for SND Fate script. 
+
 ### Support via [baanderson40's ko-fi](https://ko-fi.com/baanderson40)
 ---
 
