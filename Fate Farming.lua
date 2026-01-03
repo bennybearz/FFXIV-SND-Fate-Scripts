@@ -399,7 +399,7 @@ BicolorExchangeData =
         position=Vector3(701, 21, -45),
         shopItems =
         {
-            { itemName = "Lakeland Elf Tree", itemIndex = 5, price = 30},
+            { itemName = "Lakeland Elf Tree", itemIndex = 4, price = 30},
         }
     }
 }
