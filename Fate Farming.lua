@@ -1,7 +1,7 @@
 --[=====[
 [[SND Metadata]]
-author: baanderson40 || orginially pot0to
-version: 3.1.6
+author: bennybearz || baanderson40 || orginially pot0to
+version: 3.1.7
 description: |
   Support via https://ko-fi.com/baanderson40
   Fate farming script with the following features:
@@ -112,6 +112,7 @@ configs:
         "Hammerhead Crocodile Skin",
         "Hamsa Tenderloin",
         "Kumbhira Skin",
+        "Lakeland Elf Tree",
         "Lesser Apollyon Shell",
         "Lunatender Blossom",
         "Luncheon Toad Skin",
@@ -165,6 +166,7 @@ configs:
 ********************************************************************************
 *                                  Changelog                                   *
 ********************************************************************************
+    -> 3.1.7    Added Lakeland Elf Tree to the purchase options
     -> 3.1.6    Added multiple ARR fate definitions
     -> 3.1.5    Added HW fate definitions
     -> 3.1.4    Modified VBM/BMR combat commands to use IPCs
@@ -387,6 +389,17 @@ BicolorExchangeData =
         shopItems =
         {
             { itemName = "Ut'ohmu Siderite", itemIndex = 8, price = 600 }
+        }
+    },
+    {
+        shopKeepName = "Siulmet",
+        zoneName = "Lakeland",
+        zoneId = 813,
+        aetheryteName = "Fort Jobb",
+        position=Vector3(701, 21, -45),
+        shopItems =
+        {
+            { itemName = "Lakeland Elf Tree", itemIndex = 5, price = 30},
         }
     }
 }
