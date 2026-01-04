@@ -406,7 +406,7 @@ BicolorExchangeData =
         position=Vector3(701, 21, -45),
         shopItems =
         {
-            { itemName = "Lakeland Elf Tree", itemIndex = 4, price = 30},
+            { itemName = "Lakeland Elf Tree", itemIndex = 4, price = 30, singlePurchase = true },
         }
     }
 }
@@ -3031,7 +3031,17 @@ function ExecuteBicolorExchange()
         end
 
         if Addons.GetAddon("ShopExchangeCurrency").Ready then
-            yield("/callback ShopExchangeCurrency false 0 "..SelectedBicolorExchangeData.item.itemIndex.." "..(1//BicolorGemCount//SelectedBicolorExchangeData.item.price))
+            if SelectedBicolorExchangeData.item.singlePurchase == true then
+                local purchaseCount = BicolorGemCount // SelectedBicolorExchangeData.item.price
+                while purchaseCount > 0 do
+                    yield("/callback ShopExchangeCurrency false 0 "..SelectedBicolorExchangeData.item.itemIndex.." 1")
+                    yield("/wait 0.5")
+                    purchaseCount = purchaseCount - 1
+                end
+            else
+                local quantity = BicolorGemCount // SelectedBicolorExchangeData.item.price
+                yield("/callback ShopExchangeCurrency false 0 "..SelectedBicolorExchangeData.item.itemIndex.." "..quantity)
+            end
             return
         end
 
