@@ -3024,7 +3024,7 @@ function ExecuteBicolorExchange()
         end
 
         if Addons.GetAddon("ShopExchangeCurrency").Ready then
-            yield("/callback ShopExchangeCurrency false 0 "..SelectedBicolorExchangeData.item.itemIndex.." "..(BicolorGemCount//SelectedBicolorExchangeData.item.price))
+            yield("/callback ShopExchangeCurrency false 0 "..SelectedBicolorExchangeData.item.itemIndex.." "..(1//BicolorGemCount//SelectedBicolorExchangeData.item.price))
             return
         end
 
@@ -3548,6 +3548,8 @@ ShouldExchangeBicolorGemstones = Config.Get("Exchange bicolor gemstones?")
 ItemToPurchase                 = Config.Get("Exchange bicolor gemstones for")
 if ItemToPurchase == "None" then
     ShouldExchangeBicolorGemstones = false
+elseif ItemToPurchase != "None" then
+    ShouldExchangeBicolorGemstones = true
 end
 ReturnOnDeath                   = Config.Get("Return on death?")
 SelfRepair                      = Config.Get("Self repair?")
