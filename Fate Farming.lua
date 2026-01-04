@@ -3548,7 +3548,7 @@ ShouldExchangeBicolorGemstones = Config.Get("Exchange bicolor gemstones?")
 ItemToPurchase                 = Config.Get("Exchange bicolor gemstones for")
 if ItemToPurchase == "None" then
     ShouldExchangeBicolorGemstones = false
-elseif ItemToPurchase != "None" then
+elseif ItemToPurchase ~= "None" then
     ShouldExchangeBicolorGemstones = true
 end
 ReturnOnDeath                   = Config.Get("Return on death?")
