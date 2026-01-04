@@ -140,6 +140,13 @@ configs:
   Buy Gysahl Greens?:
     description: Automatically buys a 99 stack of Gysahl Greens from the Limsa gil vendor if none in inventory.
     default: true
+  Which mount to use?:
+    description: Which mount to utilize when navigating between FATEs
+    default: "mount roulette"
+    is_choice: true
+    choices: ["mount roulette",
+    "Company Chocobo",
+    "Air-wheeler A9"]
   Self repair?:
     description: If checked, will attempt to repair your gear. If not checked, will go to Limsa mender.
     default: true
@@ -3410,7 +3417,7 @@ Food                            = Config.Get("Food")
 Potion                          = Config.Get("Potion")
 
 -- Chocobo
-ResummonChocoboTimeLeft            = 3 * 60        --Resummons chocobo if there's less than this many seconds left on the timer, so it doesn't disappear on you in the middle of a fate.
+ResummonChocoboTimeLeft         = 3 * 60        --Resummons chocobo if there's less than this many seconds left on the timer, so it doesn't disappear on you in the middle of a fate.
 ChocoboStance                   = Config.Get("Chocobo Companion Stance") -- Options: Follow, Free, Defender, Healer, Attacker, None. Do not summon if None.
 ShouldSummonChocobo =  ChocoboStance == "Follow"
                     or ChocoboStance == "Free"
@@ -3418,7 +3425,7 @@ ShouldSummonChocobo =  ChocoboStance == "Follow"
                     or ChocoboStance == "Healer"
                     or ChocoboStance == "Attacker"
 ShouldAutoBuyGysahlGreens       = Config.Get("Buy Gysahl Greens?")
-MountToUse                      = "mount roulette"       --The mount youd like to use when flying between fates
+MountToUse                      = Config.Get("Which mount to use?")       --The mount youd like to use when flying between fates
 
 -- Retainer
 
